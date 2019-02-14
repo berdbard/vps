@@ -15,5 +15,5 @@ vncserver -kill :1
 service vncserver start
 service vncserver restart
 
-yum list firefox --showdupli
-yum install firefox-52.8.0-1.el6.centos -y
+sudo yum list firefox --showdupli
+sudo yum -y install firefox-52.8.0-1.el6.centos 
