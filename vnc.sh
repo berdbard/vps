@@ -1,13 +1,22 @@
 #!/bin/bash
 
+
+yum -y remove sendmail;
+yum -y remove httpd;
+yum -y remove cyrus-sasl 
+
+
+service exim stop
+chkconfig exim off
+
 sudo yum -y groupinstall Desktop
 sudo yum -y install tigervnc-server
 sudo yum -y install xorg-x11-fonts-Type1
 sudo chkconfig vncserver on
 vncpasswd
 
-echo 'VNCSERVERS="1:root"' >> /etc/sysconfig/vncservers
-echo 'VNCSERVERARGS[1]="-geometry 1024×600"' >> /etc/sysconfig/vncservers
+wget -O /etc/sysconfig/vncservers "https://raw.githubusercontent.com/berdbard/vps/master/vncservers"
+chmod +x /etc/sysconfig/vncservers
 
 service vncserver restart
 vncserver -kill :1
