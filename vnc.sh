@@ -15,7 +15,7 @@ sudo yum -y install xorg-x11-fonts-Type1
 sudo chkconfig vncserver on
 vncpasswd
 
-wget -O /etc/sysconfig/vncservers "https://raw.githubusercontent.com/berdbard/vps/master/vncservers"
+wget -O  /etc/sysconfig/vncservers --no-check-certificate "https://raw.githubusercontent.com/berdbard/vps/master/vncservers"
 chmod +x /etc/sysconfig/vncservers
 
 service vncserver restart
