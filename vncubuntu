@@ -1,0 +1,5 @@
+sudo apt-get update
+
+sudo apt-get install firefox gnome xfce4 xfce4-goodies tightvncserver
+
+vncserver
