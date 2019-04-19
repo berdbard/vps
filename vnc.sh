@@ -4,7 +4,7 @@
 yum -y remove sendmail;
 yum -y remove httpd;
 yum -y remove cyrus-sasl 
-
+yum -y remove NetworkManager
 
 service exim stop
 chkconfig exim off
